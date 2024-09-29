@@ -505,7 +505,7 @@ class compression:
                                     long_one_time = len(T10)
 
                                     if (
-                                        long_one_time<=256
+                                        long_F > long_one_time
                                         and times_compress >= 0
                                         or times_compress == (2**24) - 2
                                     ):
