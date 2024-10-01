@@ -874,7 +874,7 @@ class compression:
                                     with open(name2, "wb") as f2:
                                         f2.write(width_bits3)
                                     elapsed_time = time() - start_time
-                                    speed_bits = (long_11 * 8) / float(elapsed_time)
+                                    speed_bits = (long_11 * 8) // float(elapsed_time)
                                     print(f"Speed bits: {speed_bits:.5f}")
                                     return str(elapsed_time)
 
