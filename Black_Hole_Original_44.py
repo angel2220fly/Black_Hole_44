@@ -507,7 +507,7 @@ class compression:
                                     if (
                                         long_one_time<=256
                                         and times_compress >= 0
-                                        or times_compress == (2**255) - 2
+                                        or times_compress == (2**256) - 2
                                     ):
                                         stop_compress = 1
                                         Compress_file = 1
