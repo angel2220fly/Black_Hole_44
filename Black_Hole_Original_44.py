@@ -147,6 +147,7 @@ class compression:
 
                             Extact = File_information5_2
 
+                          
                         long_13 = len(File_information5_2)
 
                         long_12 = len(File_information5_2)
@@ -239,7 +240,6 @@ class compression:
                                         c_c1 = 0
                                         block += 24
                                         num1 = int(T8, 2)
-
                                         if len(T8) != 24:
 
                                             T10 += "1" + T8  # left bits
@@ -250,9 +250,6 @@ class compression:
                                             num = int(
                                                 T8, 2
                                             )  # Convert binary to decimal
-                                            num = num - 1
-                                            if num == -1:
-                                                num = (2**24) - 1
                                             num_c = num
                                             # num check
                                             # print(f"Converted binary {T8} to decimal: {num}")
@@ -267,32 +264,24 @@ class compression:
                                             # Main loop to calculate binary representations
                                             while finish != 1:
                                                 if num > 1000000000:
-                                                    print(
-                                                        "This number is too big!"
-                                                    )
+                                                    print("This number is too big!")
                                                 elif num < 0:
                                                     print(
                                                         "Please enter a non-negative integer."
                                                     )
                                                 else:
-                                                    max_length = len(
-                                                        format(num, "b")
-                                                    )
+                                                    max_length = len(format(num, "b"))
                                                     binary_numbers = []
                                                     # Generate binary numbers of lengths 1 to max_length
                                                     for length in range(
                                                         1, max_length + 1
                                                     ):
-                                                        for i in range(
-                                                            2**length
-                                                        ):
+                                                        for i in range(2**length):
                                                             binary_numbers.append(
                                                                 format(
                                                                     i,
                                                                     "0"
-                                                                    + str(
-                                                                        length
-                                                                    )
+                                                                    + str(length)
                                                                     + "b",
                                                                 )
                                                             )
@@ -301,9 +290,7 @@ class compression:
                                                     for (
                                                         index,
                                                         binary,
-                                                    ) in enumerate(
-                                                        binary_numbers
-                                                    ):
+                                                    ) in enumerate(binary_numbers):
                                                         if index > num:
                                                             break
                                                         last_binary = (
@@ -355,8 +342,8 @@ class compression:
                                             count_number = 0
                                             while finish1 != 1:
                                                 num = count_number
-                                                binary_representation_before = (
-                                                    len(format(num, "01b"))
+                                                binary_representation_before = len(
+                                                    format(num, "01b")
                                                 )
                                                 finish = 0
                                                 times = 0
@@ -373,16 +360,12 @@ class compression:
                                                         for length in range(
                                                             1, max_length + 1
                                                         ):
-                                                            for i in range(
-                                                                2**length
-                                                            ):
+                                                            for i in range(2**length):
                                                                 binary_numbers.append(
                                                                     format(
                                                                         i,
                                                                         "0"
-                                                                        + str(
-                                                                            length
-                                                                        )
+                                                                        + str(length)
                                                                         + "b",
                                                                     )
                                                                 )
@@ -390,9 +373,7 @@ class compression:
                                                         for (
                                                             index,
                                                             binary,
-                                                        ) in enumerate(
-                                                            binary_numbers
-                                                        ):
+                                                        ) in enumerate(binary_numbers):
                                                             if index > num:
                                                                 break
                                                             last_binary = (
@@ -412,30 +393,26 @@ class compression:
                                                                 binary_representation,
                                                                 2,
                                                             )
-                                                            binary_representation = format(
-                                                                binary_to_number,
-                                                                "01b",
+                                                            binary_representation = (
+                                                                format(
+                                                                    binary_to_number,
+                                                                    "01b",
+                                                                )
                                                             )
-                                                            num = (
-                                                                binary_to_number
-                                                            )
+                                                            num = binary_to_number
                                                             length_tree = len(
                                                                 binary_representation
                                                             )
                                                             times += 1
                                                             if long_br < 9:
-                                                                count_number += (
-                                                                    1
-                                                                )
+                                                                count_number += 1
                                                                 finish = 2
                                                             if (
                                                                 long_br < 9
                                                                 and binary_representation_before
                                                                 == binary_representation_before_long
-                                                                and times_after
-                                                                == times
-                                                                and long_br1
-                                                                == long_br
+                                                                and times_after == times
+                                                                and long_br1 == long_br
                                                                 and binary_to_number_number_after
                                                                 == binary_to_number
                                                             ):
@@ -451,8 +428,7 @@ class compression:
                                                                 # print(binary_to_number_number_after)
                                                                 # print("count_number")
                                                                 count_number = (
-                                                                    count_number
-                                                                    - 1
+                                                                    count_number - 1
                                                                 )
                                                                 # print(count_number)
 
@@ -470,8 +446,7 @@ class compression:
                                                                     "08b",
                                                                 )
                                                                 times_after = (
-                                                                    times_after
-                                                                    - 1
+                                                                    times_after - 1
                                                                 )
                                                                 # print(binary_to_number)
                                                                 binary_representation_before_long1 = format(
@@ -510,25 +485,19 @@ class compression:
                                                                 # print(ba)
 
                                                                 if (
-                                                                    len(IFC)
-                                                                    == 23
+                                                                    len(IFC) == 23
                                                                     and num_c
                                                                     == count_number
                                                                 ):
                                                                     T10 += IFC
                                                                     # print(IFC)
                                                                 else:
-                                                                    num2 = int(
-                                                                        T8, 2
-                                                                    )
+                                                                    num2 = int(T8, 2)
                                                                     IFC = format(
                                                                         num2,
                                                                         "024b",
                                                                     )
-                                                                    T10 += (
-                                                                        "1"
-                                                                        + IFC
-                                                                    )
+                                                                    T10 += "1" + IFC
 
                                     INFO = T10
                                     T8 = T10
@@ -536,7 +505,7 @@ class compression:
                                     long_one_time = len(T10)
 
                                     if (
-                                        long_one_time <= 256
+                                        long_one_time<=256
                                         and times_compress >= 0
                                         or times_compress == (2**24) - 2
                                     ):
@@ -607,9 +576,7 @@ class compression:
 
                                         width_bits = "%0" + width_bits + "x"
 
-                                        width_bits3 = binascii.unhexlify(
-                                            width_bits % n
-                                        )
+                                        width_bits3 = binascii.unhexlify(width_bits % n)
 
                                         width_bits2 = len(width_bits3)
 
@@ -627,9 +594,7 @@ class compression:
 
                                         x3 = x2 - x
 
-                                        print(
-                                            f"Speed bits: {(long_11) / x3:.5f}"
-                                        )
+                                        print(f"Speed bits: {(long_11) / x3:.5f}")
 
                                         xs = float(x3)
 
@@ -656,15 +621,13 @@ class compression:
 
                                             if File_information5[:1] == "0":
 
-                                                File_information5 = (
-                                                    File_information5[1:]
-                                                )
+                                                File_information5 = File_information5[
+                                                    1:
+                                                ]
 
                                     if File_information5[:1] == "1":
 
-                                        File_information5 = File_information5[
-                                            1:
-                                        ]
+                                        File_information5 = File_information5[1:]
 
                                 INFO = File_information5
                                 # print(INFO)
@@ -769,9 +732,7 @@ class compression:
 
                                             block += 5
 
-                                            long_br1 = int(
-                                                (INFO[block : block + 3]), 2
-                                            )
+                                            long_br1 = int((INFO[block : block + 3]), 2)
                                             long_br1 = long_br1 + 1
                                             block += 3
 
@@ -787,8 +748,8 @@ class compression:
                                             count_number = 0
                                             while finish1 != 1:
                                                 num = count_number
-                                                binary_representation_before = (
-                                                    len(format(num, "01b"))
+                                                binary_representation_before = len(
+                                                    format(num, "01b")
                                                 )
                                                 finish = 0
                                                 times = 0
@@ -805,16 +766,12 @@ class compression:
                                                         for length in range(
                                                             1, max_length + 1
                                                         ):
-                                                            for i in range(
-                                                                2**length
-                                                            ):
+                                                            for i in range(2**length):
                                                                 binary_numbers.append(
                                                                     format(
                                                                         i,
                                                                         "0"
-                                                                        + str(
-                                                                            length
-                                                                        )
+                                                                        + str(length)
                                                                         + "b",
                                                                     )
                                                                 )
@@ -822,9 +779,7 @@ class compression:
                                                         for (
                                                             index,
                                                             binary,
-                                                        ) in enumerate(
-                                                            binary_numbers
-                                                        ):
+                                                        ) in enumerate(binary_numbers):
                                                             if index > num:
                                                                 break
                                                             last_binary = (
@@ -845,30 +800,26 @@ class compression:
                                                                 2,
                                                             )
 
-                                                            binary_representation = format(
-                                                                binary_to_number,
-                                                                "01b",
+                                                            binary_representation = (
+                                                                format(
+                                                                    binary_to_number,
+                                                                    "01b",
+                                                                )
                                                             )
-                                                            num = (
-                                                                binary_to_number
-                                                            )
+                                                            num = binary_to_number
                                                             length_tree = len(
                                                                 binary_representation
                                                             )
                                                             times += 1
                                                             if length_tree < 9:
-                                                                count_number += (
-                                                                    1
-                                                                )
+                                                                count_number += 1
                                                                 finish = 2
                                                             if (
                                                                 long_br < 9
                                                                 and binary_representation_before
                                                                 == binary_representation_before_long
-                                                                and times_after
-                                                                == times
-                                                                and long_br1
-                                                                == long_br
+                                                                and times_after == times
+                                                                and long_br1 == long_br
                                                                 and binary_to_number_number_after
                                                                 == binary_to_number
                                                             ):
@@ -884,20 +835,8 @@ class compression:
                                                                 # print(binary_to_number_number_after)
                                                                 # print(count_number)
                                                                 count_number = (
-                                                                    count_number
-                                                                    - 1
+                                                                    count_number - 1
                                                                 )
-                                                                count_number += (
-                                                                    1
-                                                                )
-                                                                if (
-                                                                    count_number
-                                                                    == 2**24
-                                                                ):
-                                                                    count_number = (
-                                                                        0
-                                                                    )
-
                                                                 IFC = format(
                                                                     count_number,
                                                                     "024b",
@@ -928,18 +867,14 @@ class compression:
                                     L = len(File_information5_17)
                                     n = int(File_information5_17, 2)
                                     width_bits = "%0" + str((L // 8) * 2) + "x"
-                                    width_bits3 = binascii.unhexlify(
-                                        width_bits % n
-                                    )
+                                    width_bits3 = binascii.unhexlify(width_bits % n)
                                     width_bits2 = len(width_bits3)
                                     name2 = name[:-2]
                                     start_time = time()
                                     with open(name2, "wb") as f2:
                                         f2.write(width_bits3)
                                     elapsed_time = time() - start_time
-                                    speed_bits = (long_11 * 8) / float(
-                                        elapsed_time
-                                    )
+                                    speed_bits = (long_11 * 8) / float(elapsed_time)
                                     print(f"Speed bits: {speed_bits:.5f}")
                                     return str(elapsed_time)
 
