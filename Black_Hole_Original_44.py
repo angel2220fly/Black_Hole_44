@@ -238,7 +238,7 @@ class compression:
                                         c_c = 0
                                         c_c1 = 0
                                         block += 24
-                                        num1 = int(T8, 2)
+                                        
 
                                         if len(T8) != 24:
 
