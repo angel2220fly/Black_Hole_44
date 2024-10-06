@@ -66,6 +66,8 @@ class compression:
             Circle_times2 = 1
             Circle_times3 = 0
             CB = -1
+            Times1 = 0
+            Tc=0
             x = time()
             File_information6_Times2_1 = 0
             name_2 = name
@@ -419,23 +421,24 @@ class compression:
                                                             num = (
                                                                 binary_to_number
                                                             )
+                                                            #print(num)
+                                                            #print(index)
                                                             length_tree = len(
                                                                 binary_representation
                                                             )
                                                             times += 1
-                                                            if long_br < 9:
+                                                            if length_tree < 9:
                                                                 count_number += (
                                                                     1
                                                                 )
                                                                 finish = 2
                                                             if (
-                                                                long_br < 9
+                                                                length_tree < 9
                                                                 and binary_representation_before
                                                                 == binary_representation_before_long
                                                                 and times_after
                                                                 == times
-                                                                and long_br1
-                                                                == long_br
+                                                                
                                                                 and binary_to_number_number_after
                                                                 == binary_to_number
                                                             ):
@@ -476,7 +479,7 @@ class compression:
                                                                 # print(binary_to_number)
                                                                 binary_representation_before_long1 = format(
                                                                     times_after,
-                                                                    "06b",
+                                                                    "05b",
                                                                 )
                                                                 # print(binary_representation_before)
                                                                 length_tree_after = format(
@@ -494,10 +497,11 @@ class compression:
 
                                                                 length_tree_after2 = format(
                                                                     length_tree_after1,
-                                                                    "03b",
+                                                                    "04b",
                                                                 )
 
                                                                 # print(binary_representation_before)
+                                                                
                                                                 IFC = (
                                                                     "0"
                                                                     + binary_representation
@@ -505,18 +509,20 @@ class compression:
                                                                     + length_tree_after
                                                                     + length_tree_after2
                                                                 )
-
-                                                                # ba=int(binary_representation,2)
-                                                                # print(ba)
-
+                                                                #print(length_tree_after2)
+                                                                #print(length_tree_after)
+                                                                #print(binary_representation_before_long1)
+                                                                #print(binary_representation)
+                                                                #print(len(IFC))
+                                                                #print(count_number)
                                                                 if (
                                                                     len(IFC)
                                                                     == 23
                                                                     and num_c
-                                                                    == count_number
+                                                                    == count_number and len(length_tree_after2)==4 and len(length_tree_after)==5 and len(binary_representation_before_long1)==5 and len(binary_representation)
                                                                 ):
                                                                     T10 += IFC
-                                                                    # print(IFC)
+                                                                    #print(IFC)
                                                                 else:
                                                                     num2 = int(
                                                                         T8, 2
@@ -529,6 +535,8 @@ class compression:
                                                                         "1"
                                                                         + IFC
                                                                     )
+
+                                           
 
                                     INFO = T10
                                     T8 = T10
@@ -557,7 +565,8 @@ class compression:
                                             len(times_compression_format),
                                             "0256b",
                                         )
-                                        
+                                   
+                                        #print(times_255_p_255)
                                         #  long of file  start number file before
 
                                         I_F_B = format(long_F1, "01b")
@@ -673,11 +682,10 @@ class compression:
                                 if Circle_times3 == 0:
                                     # times count extract
 
-                                    
 
                                     CE = int(INFO[:256], 2)
 
-                                    # print(CE)
+                                    #print(CE)
 
                                     INFO = INFO[256:]
                                     
@@ -715,17 +723,18 @@ class compression:
                                     # e.g.: 12 8-10
                                     #############
 
-                                Times1 = 0
+                                
 
                                 while Extract1 != 1:
                                     # 1 bits 21
                                     # 0 19
                                     long_F = len(INFO)
+                                    #print(long_F)
 
                                     block = 0
                                     TUPLE = ""
                                     while block < long_F:
-                                        take_c_or_l = INFO[block : block + 19]
+                                        take_c_or_l = INFO[block : block + 23]
                                         long_l = len(take_c_or_l)
                                         # print(long_l)
                                         if INFO[block : block + 1] == "1":
@@ -737,7 +746,7 @@ class compression:
                                         elif INFO[block : block + 1] == "0":
 
                                             block += 1
-                                            # print(INFO[:1] )
+                                            #print(take_c_or_l)
 
                                             # print("4")
                                             # print(len(num3))
@@ -764,7 +773,7 @@ class compression:
                                             times_after = times_after + 1
                                             # print(binary_representation_before_long)
 
-                                            block += 6
+                                            block += 5
 
                                             binary_representation_before_long = int(
                                                 (INFO[block : block + 5]), 2
@@ -777,7 +786,7 @@ class compression:
                                                 (INFO[block : block + 3]), 2
                                             )
                                             long_br1 = long_br1 + 1
-                                            block += 3
+                                            block += 4
 
                                             # open 3 key
                                             # binary length tree start and finish and binanary represation
@@ -866,13 +875,12 @@ class compression:
                                                                 )
                                                                 finish = 2
                                                             if (
-                                                                long_br < 9
+                                                                length_tree < 9
                                                                 and binary_representation_before
                                                                 == binary_representation_before_long
                                                                 and times_after
                                                                 == times
-                                                                and long_br1
-                                                                == long_br
+                                                                
                                                                 and binary_to_number_number_after
                                                                 == binary_to_number
                                                             ):
@@ -909,16 +917,17 @@ class compression:
                                                                 TUPLE += IFC
 
                                                                 # print(block)
-                                                                # print(IFC)
+                                                                #print(IFC)
 
                                     TUPLE1 = TUPLE
                                     INFO = TUPLE
-                                    # print(INFO)
+                                    #print(INFO)
 
                                     long_L = len(TUPLE)
-                                    Times1 += 1
-                                    # print(tce)
-                                    if tce == Times1:
+                                    Tc += 1
+                                    #print(Tc)
+                                    
+                                    if tce == Tc:
                                         Extract1 = 1
 
                                 if Extract1 == 1:
