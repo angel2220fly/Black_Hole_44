@@ -564,8 +564,12 @@ class compression:
                                         # print(times_compression_format)
                                         times_255 = format(
                                             len(times_compression_format),
-                                            "0256b",
+                                            "08b",
                                         )
+                                        times_255p = format(
+                                            len(times_255),
+                                            "016b",
+                                        )                                        
                                    
                                         #print(times_255_p_255)
                                         #  long of file  start number file before
@@ -582,6 +586,7 @@ class compression:
                                         I_F_A_L = format(len(I_F_A), "08b")
                                         File_information5_17 = (
                                             "1"
+                                            +times_255p
                                             + times_255
                                             + times_compression_format
                                             + I_F_B_L
@@ -682,13 +687,19 @@ class compression:
 
                                 if Circle_times3 == 0:
                                     # times count extract
-
-
-                                    CE = int(INFO[:256], 2)
+                                    
+                                    
+                                    CEI = int(INFO[:16], 2)
 
                                     #print(CE)
 
-                                    INFO = INFO[256:]
+                                    INFO = INFO[16:]
+
+                                    CE = int(INFO[:CEI], 2)
+
+                                    #print(CE)
+
+                                    INFO = INFO[CEI:]
                                     
                                     tce = int(INFO[:CE], 2)
 
