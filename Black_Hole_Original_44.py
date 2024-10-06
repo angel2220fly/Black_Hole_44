@@ -438,8 +438,7 @@ class compression:
                                                                 == binary_representation_before_long
                                                                 and times_after
                                                                 == times
-                                                                and long_br1
-                                                                == long_br                                                                
+                                                                                                                            
                                                                 and binary_to_number_number_after
                                                                 == binary_to_number
                                                             ):
@@ -471,7 +470,7 @@ class compression:
                                                                 # print(binary_representation_before_long)#before
                                                                 binary_representation = format(
                                                                     binary_to_number_number_after,
-                                                                    "08b",
+                                                                    "010b",
                                                                 )
                                                                 times_after = (
                                                                     times_after
@@ -480,12 +479,12 @@ class compression:
                                                                 # print(binary_to_number)
                                                                 binary_representation_before_long1 = format(
                                                                     times_after,
-                                                                    "05b",
+                                                                    "06b",
                                                                 )
                                                                 # print(binary_representation_before)
                                                                 length_tree_after = format(
                                                                     binary_representation_before_long,
-                                                                    "05b",
+                                                                    "06b",
                                                                 )
 
                                                                 length_tree_after1 = (
@@ -496,10 +495,7 @@ class compression:
                                                                     - 1
                                                                 )
 
-                                                                length_tree_after2 = format(
-                                                                    length_tree_after1,
-                                                                    "04b",
-                                                                )
+                                                                
 
                                                                 # print(binary_representation_before)
                                                                 
@@ -508,11 +504,12 @@ class compression:
                                                                     + binary_representation
                                                                     + binary_representation_before_long1
                                                                     + length_tree_after
-                                                                    + length_tree_after2
+                                                                   
                                                                 )
+                                                                
                                                                 #print(length_tree_after2)
-                                                                #print(length_tree_after)
-                                                                #print(binary_representation_before_long1)
+                                                                #print(len(length_tree_after))
+                                                                #print(len(binary_representation_before_long1))
                                                                 #print(binary_representation)
                                                                 #print(len(IFC))
                                                                 #print(count_number)
@@ -520,7 +517,7 @@ class compression:
                                                                     len(IFC)
                                                                     == 23
                                                                     and num_c
-                                                                    == count_number and len(length_tree_after2)==4 and len(length_tree_after)==5 and len(binary_representation_before_long1)==5 and len(binary_representation)==4
+                                                                    == count_number and len(length_tree_after)==6 and len(binary_representation)==10 and len(binary_representation_before_long1)==6
                                                                 ):
                                                                     T10 += IFC
                                                                     #print(IFC)
@@ -774,31 +771,27 @@ class compression:
 
                                             # print(binary_to_number_number_after)#binary represation
                                             binary_to_number_number_after = int(
-                                                (INFO[block : block + 8]), 2
+                                                (INFO[block : block + 10]), 2
                                             )
                                             # print(times_after)
 
-                                            block += 8
+                                            block += 10
                                             times_after = int(
                                                 (INFO[block : block + 6]), 2
                                             )
                                             times_after = times_after + 1
                                             # print(binary_representation_before_long)
 
-                                            block += 5
+                                            block += 6
 
                                             binary_representation_before_long = int(
-                                                (INFO[block : block + 5]), 2
+                                                (INFO[block : block + 6]), 2
                                             )
                                             # print(binary_to_number_number_after)
 
-                                            block += 5
+                                            block += 6
 
-                                            long_br1 = int(
-                                                (INFO[block : block + 4]), 2
-                                            )
-                                            long_br1 = long_br1 + 1
-                                            block += 4
+                                          
 
                                             # open 3 key
                                             # binary length tree start and finish and binanary represation
@@ -892,9 +885,8 @@ class compression:
                                                                 == binary_representation_before_long
                                                                 and times_after
                                                                 == times
-                                                                and
-                                                                long_br1 
-                                                                ==long_br
+                                                               
+                                                               
                                                                 
                                                               
                                                                 
