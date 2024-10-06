@@ -419,24 +419,23 @@ class compression:
                                                             num = (
                                                                 binary_to_number
                                                             )
-                                                            #print(num)
-                                                            #print(index)
                                                             length_tree = len(
                                                                 binary_representation
                                                             )
                                                             times += 1
-                                                            if length_tree < 9:
+                                                            if long_br < 9:
                                                                 count_number += (
                                                                     1
                                                                 )
                                                                 finish = 2
                                                             if (
-                                                                length_tree < 9
+                                                                long_br < 9
                                                                 and binary_representation_before
                                                                 == binary_representation_before_long
                                                                 and times_after
                                                                 == times
-                                                                
+                                                                and long_br1
+                                                                == long_br
                                                                 and binary_to_number_number_after
                                                                 == binary_to_number
                                                             ):
@@ -556,12 +555,9 @@ class compression:
                                         # print(times_compression_format)
                                         times_255 = format(
                                             len(times_compression_format),
-                                            "08b",
+                                            "0256b",
                                         )
-                                        times_255_p_255 = format(
-                                            len(times_255),
-                                            "016b",
-                                        )
+                                        
                                         #  long of file  start number file before
 
                                         I_F_B = format(long_F1, "01b")
@@ -576,7 +572,6 @@ class compression:
                                         I_F_A_L = format(len(I_F_A), "08b")
                                         File_information5_17 = (
                                             "1"
-                                            + times_255_p_255
                                             + times_255
                                             + times_compression_format
                                             + I_F_B_L
@@ -678,17 +673,13 @@ class compression:
                                 if Circle_times3 == 0:
                                     # times count extract
 
-                                    CEI = int(INFO[:16], 2)
+                                    
+
+                                    CE = int(INFO[:256], 2)
 
                                     # print(CE)
 
-                                    INFO = INFO[16:]
-
-                                    CE = int(INFO[:CEI], 2)
-
-                                    # print(CE)
-
-                                    INFO = INFO[CEI:]
+                                    INFO = INFO[256:]
                                     
                                     tce = int(INFO[:CE], 2)
 
