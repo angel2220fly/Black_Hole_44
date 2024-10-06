@@ -520,7 +520,7 @@ class compression:
                                                                     len(IFC)
                                                                     == 23
                                                                     and num_c
-                                                                    == count_number and len(length_tree_after2)==4 and len(length_tree_after)==5 and len(binary_representation_before_long1)==5 and len(binary_representation)
+                                                                    == count_number and len(length_tree_after2)==4 and len(length_tree_after)==5 and len(binary_representation_before_long1)==5 and len(binary_representation)==4
                                                                 ):
                                                                     T10 += IFC
                                                                     #print(IFC)
