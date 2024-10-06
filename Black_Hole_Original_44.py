@@ -438,7 +438,8 @@ class compression:
                                                                 == binary_representation_before_long
                                                                 and times_after
                                                                 == times
-                                                                
+                                                                and long_br1
+                                                                == long_br                                                                
                                                                 and binary_to_number_number_after
                                                                 == binary_to_number
                                                             ):
@@ -783,7 +784,7 @@ class compression:
                                             block += 5
 
                                             long_br1 = int(
-                                                (INFO[block : block + 3]), 2
+                                                (INFO[block : block + 4]), 2
                                             )
                                             long_br1 = long_br1 + 1
                                             block += 4
@@ -880,6 +881,11 @@ class compression:
                                                                 == binary_representation_before_long
                                                                 and times_after
                                                                 == times
+                                                                and
+                                                                long_br1 
+                                                                ==long_br
+                                                                
+                                                              
                                                                 
                                                                 and binary_to_number_number_after
                                                                 == binary_to_number
