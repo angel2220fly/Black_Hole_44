@@ -775,25 +775,25 @@ class compression:
 
                                             # print(binary_to_number_number_after)#binary represation
                                             binary_to_number_number_after = int(
-                                                (INFO[block : block + 11]), 2
+                                                (INFO[block : block + 9]), 2
                                             )
                                             # print(times_after)
 
                                             block += 9
                                             times_after = int(
-                                                (INFO[block : block + 7]), 2
+                                                (INFO[block : block + 6]), 2
                                             )
                                             times_after = times_after + 1
                                             # print(binary_representation_before_long)
 
-                                            block += 7
+                                            block += 6
 
                                             binary_representation_before_long = int(
-                                                (INFO[block : block + 6]), 2
+                                                (INFO[block : block + 7]), 2
                                             )
                                             # print(binary_to_number_number_after)
 
-                                            block += 6
+                                            block += 7
 
                                           
 
