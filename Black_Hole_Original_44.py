@@ -419,23 +419,24 @@ class compression:
                                                             num = (
                                                                 binary_to_number
                                                             )
+                                                            #print(num)
+                                                            #print(index)
                                                             length_tree = len(
                                                                 binary_representation
                                                             )
                                                             times += 1
-                                                            if long_br < 9:
+                                                            if length_tree < 9:
                                                                 count_number += (
                                                                     1
                                                                 )
                                                                 finish = 2
                                                             if (
-                                                                long_br < 9
+                                                                length_tree < 9
                                                                 and binary_representation_before
                                                                 == binary_representation_before_long
                                                                 and times_after
                                                                 == times
-                                                                and long_br1
-                                                                == long_br
+                                                                
                                                                 and binary_to_number_number_after
                                                                 == binary_to_number
                                                             ):
