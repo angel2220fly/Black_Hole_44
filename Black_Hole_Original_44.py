@@ -319,7 +319,9 @@ class compression:
                                                         ) = last_binary
                                                         long_br1 = len(
                                                             binary_representation
+                                                            
                                                         )
+                                                        #print(len(binary_representation))
                                                         # print(f"{binary_representation}: {index}")
                                                         binary_to_number = int(
                                                             binary_representation,
@@ -469,9 +471,10 @@ class compression:
                                                                 # print(length_tree_after)# after
                                                                 #
                                                                
+                                                               
                                                                 binary_representation = format(
                                                                     binary_to_number_number_after,
-                                                                    "011b",
+                                                                    "09b",
                                                                 )
                                                                 times_after = (
                                                                     times_after
@@ -480,12 +483,12 @@ class compression:
                                                                 # print(binary_to_number)
                                                                 binary_representation_before_long1 = format(
                                                                     times_after,
-                                                                    "06b",
+                                                                    "07b",
                                                                 )
                                                                 # print(binary_representation_before)
                                                                 length_tree_after = format(
                                                                     binary_representation_before_long,
-                                                                    "05b",
+                                                                    "06b",
                                                                 )
 
                                                                 length_tree_after1 = (
@@ -518,7 +521,7 @@ class compression:
                                                                     len(IFC)
                                                                     == 23
                                                                     and num_c
-                                                                    == count_number and len(length_tree_after)==5 and len(binary_representation)==11 and len(binary_representation_before_long1)==6
+                                                                    == count_number and len(length_tree_after)==6 and len(binary_representation)==9 and len(binary_representation_before_long1)==7
                                                                 ):
                                                                     T10 += IFC
                                                                     #print(IFC)
@@ -776,21 +779,21 @@ class compression:
                                             )
                                             # print(times_after)
 
-                                            block += 11
+                                            block += 9
                                             times_after = int(
-                                                (INFO[block : block + 6]), 2
+                                                (INFO[block : block + 7]), 2
                                             )
                                             times_after = times_after + 1
                                             # print(binary_representation_before_long)
 
-                                            block += 6
+                                            block += 7
 
                                             binary_representation_before_long = int(
-                                                (INFO[block : block + 5]), 2
+                                                (INFO[block : block + 6]), 2
                                             )
                                             # print(binary_to_number_number_after)
 
-                                            block += 5
+                                            block += 6
 
                                           
 
