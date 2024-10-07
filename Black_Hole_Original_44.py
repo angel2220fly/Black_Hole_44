@@ -41,11 +41,7 @@ class compression:
             else:
 
                 i = 1
-                Compress_Times_1 = int(input("How many times compress? "))
-            if Compress_Times_1>=(2**256)-2:
-            	Compress_Times_1=(2**256)-2
-            if Compress_Times_1<1:
-            	Compress_Times_1=1
+            
 
             # print(i)
             if os.path.exists(name):
@@ -161,12 +157,14 @@ class compression:
                         long_12 = len(File_information5_2)
 
                         if i == 1:
-
-                            if long_17 > (2**28) - 1 and i == 1:
-
-                                print("print file is too big!")
-
-                                raise SystemExit
+                        	Compress_Times_1=int(input("How many times compress? "))
+                        	if Compress_Times_1>=(2**256)-2:
+                        		Compress_Times_1=(2**256)-2
+                        	if Compress_Times_1<1:
+                        		Compress_Times_1=1
+                        	if long_17 > (2**28) - 1 and i == 1:
+                        		print("print file is too big!")
+                        		raise SystemExit
 
                         if i == 1:
 
