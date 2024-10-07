@@ -253,7 +253,7 @@ class compression:
                                             )  # Convert binary to decimal
                                             num = num - 1
                                             if num == -1:
-                                                num = (2**256) - 1
+                                                num = (2**32) - 1
                                             num_c = num
                                             # num check
                                             # print(f"Converted binary {T8} to decimal: {num}")
