@@ -25,7 +25,7 @@ class compression:
         if N5 == 1:
 
             Clear = ""
-            
+                        
             Compress_Times_1 = int(input("How many times compress? "))
             if Compress_Times_1>=(2**256)-2:
             	Compress_Times_1=(2**256)-2
@@ -562,45 +562,17 @@ class compression:
                                                                     T10 += IFC
                                                                     # print(IFC)
                                                                 else:
-                                                                    
                                                                     num2 = int(
                                                                         T8, 2
                                                                     )
-                                                                    if T8[:2]=="11":
-                                                                    	num2-=1
-                                                                    	if num2==-1:
-                                                                    		num2=(2**24)-1
-
-                                                                    
-                                                                    	IFC = format(
+                                                                    IFC = format(
                                                                         num2,
                                                                         "024b",
-                                                                        )
-                                                                    	if IFC[:2]=="11":
-	                                                                    	T10 += (
-	                                                                        
-	                                                                        + IFC
-	                                                                        )
-                                                                    	else:
-                                                                        	T10 += (
-                                                                        
-                                                                        	+ "1"+IFC
-                                                                        	)         
-                                                                    	
-                                                                    else:
-                                                                    	num2-=1
-                                                                    	if num2==-1:
-                                                                    		num2=(2**24)-1
-                                                                    	IFC = format(
-                                                                        num2,
-                                                                        "024b",
-                                                                        )
-                                                                    	
-                                                                    	T10 += (
-                                                                        
-                                                                        + "1"+IFC
-                                                                        )                                                         
-                                                                    times_compress += 1
+                                                                    )
+                                                                    T10 += (
+                                                                        "1"
+                                                                        + IFC
+                                                                    )
 
                                     INFO = T10
                                     T8 = T10
@@ -615,7 +587,7 @@ class compression:
                                         stop_compress = 1
                                         Compress_file = 1
                                     long_bits_after_b_1 = 1
-                                    
+                                    times_compress += 1
 
                                 # print(Compress_file)
                                 if Compress_file == 1:
