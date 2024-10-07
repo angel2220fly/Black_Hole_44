@@ -483,12 +483,12 @@ class compression:
                                                                 # print(binary_to_number)
                                                                 binary_representation_before_long1 = format(
                                                                     times_after,
-                                                                    "07b",
+                                                                    "08b",
                                                                 )
                                                                 # print(binary_representation_before)
                                                                 length_tree_after = format(
                                                                     binary_representation_before_long,
-                                                                    "06b",
+                                                                    "05b",
                                                                 )
 
                                                                 length_tree_after1 = (
@@ -521,7 +521,7 @@ class compression:
                                                                     len(IFC)
                                                                     == 23
                                                                     and num_c
-                                                                    == count_number and len(length_tree_after)==6 and len(binary_representation)==9 and len(binary_representation_before_long1)==7
+                                                                    == count_number and len(length_tree_after)==5 and len(binary_representation)==9 and len(binary_representation_before_long1)==8
                                                                 ):
                                                                     T10 += IFC
                                                                     #print(IFC)
@@ -781,19 +781,19 @@ class compression:
 
                                             block += 9
                                             times_after = int(
-                                                (INFO[block : block + 7]), 2
+                                                (INFO[block : block + 8]), 2
                                             )
                                             times_after = times_after + 1
                                             # print(binary_representation_before_long)
 
-                                            block += 7
+                                            block += 8
 
                                             binary_representation_before_long = int(
-                                                (INFO[block : block + 6]), 2
+                                                (INFO[block : block + 5]), 2
                                             )
                                             # print(binary_to_number_number_after)
 
-                                            block += 6
+                                            block += 5
 
                                           
 
