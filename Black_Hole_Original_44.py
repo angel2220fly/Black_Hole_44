@@ -491,7 +491,7 @@ class compression:
 
                                                                 binary_representation = format(
                                                                     Bi3,
-                                                                    "08b",
+                                                                    "01b",
                                                                 )
                                                                 times_after = (
                                                                     times_after
@@ -524,10 +524,11 @@ class compression:
 
                                                                 IFC = (
                                                                     "0"
+                                                                    + length_tree_after2
                                                                     + binary_representation
                                                                     + binary_representation_before_long1
                                                                     + length_tree_after
-                                                                    + length_tree_after2
+
                                                                 )
 
                                                                 # print(length_tree_after2)
@@ -538,7 +539,7 @@ class compression:
                                                                 # print(count_number)
                                                                 if (
                                                                     len(IFC)
-                                                                    == 23
+                                                                    <= 23
                                                                     and num_c
                                                                     == count_number
                                                                     and len(
@@ -548,7 +549,7 @@ class compression:
                                                                     and len(
                                                                         binary_representation
                                                                     )
-                                                                    == 8
+                                                                    <= 8
                                                                     and len(
                                                                         binary_representation_before_long1
                                                                     )
@@ -563,42 +564,14 @@ class compression:
                                                                 else:
                                                                     
                                                                     num2 = int(
-                                                                        T8, 2
-                                                                    )
-                                                                    if T8[:2]=="11":
-                                                                    	num2-=1
-                                                                    	if num2==-1:
-                                                                    		num2=(2**24)-1
-
-                                                                    
-                                                                    	IFC = format(
+                                                                    T8, 2)
+                                                                    IFC = format(
                                                                         num2,
-                                                                        "024b",
-                                                                        )
-                                                                    	if IFC[:2]=="11":
-	                                                                    	T10 += (
-	                                                                        
-	                                                                        + IFC
-	                                                                        )
-                                                                    	else:
-                                                                        	T10 += (
+                                                                        "024b",)
+                                                                    T10 += (
                                                                         
-                                                                        	+ "1"+IFC
-                                                                        	)         
-                                                                    	
-                                                                    else:
-                                                                    	num2-=1
-                                                                    	if num2==-1:
-                                                                    		num2=(2**24)-1
-                                                                    	IFC = format(
-                                                                        num2,
-                                                                        "024b",
-                                                                        )
-                                                                    	
-                                                                    	T10 += (
-                                                                        
-                                                                        + "1"+IFC
-                                                                        )                                                         
+                                                                        	"1"+IFC)         
+                                              
                                                                     times_compress += 1
 
                                     INFO = T10
@@ -832,12 +805,22 @@ class compression:
                                             # print(binary_representation_before_long)#long after
 
                                             # print(binary_to_number_number_after)#binary represation
+                                            Bif1 = int(
+                                                (INFO[block : block + 3]), 2
+                                            )
+                                            Bif1 += 1
+                                            block += 3
+                                            if Bif1==0:
+                                            	read_b==1
+                                            else:
+                                                read_b=Bif1                                                                                                                             
+                                                                                                                                                                               
                                             Bi3 = int(
-                                                (INFO[block : block + 8]), 2
+                                                (INFO[block : block + read_b]), 2
                                             )
                                             # print(times_after)
 
-                                            block += 8
+                                            block += read_b
                                             times_after = int(
                                                 (INFO[block : block + 6]), 2
                                             )
@@ -852,11 +835,7 @@ class compression:
                                             # print(binary_to_number_number_after)
 
                                             block += 5
-                                            Bif1 = int(
-                                                (INFO[block : block + 3]), 2
-                                            )
-                                            Bif1 += 1
-                                            block += 3
+
 
                                             # open 3 key
                                             # binary length tree start and finish and binanary represation
