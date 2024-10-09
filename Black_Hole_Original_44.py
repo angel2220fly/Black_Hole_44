@@ -813,18 +813,14 @@ class compression:
                                             )
                                             Bif1 += 1
                                             block += 3
-                                            
-                                            read_b=Bif1
-                                            if read_b!=0:                              
-	                                            Bi3 = int(
-	                                                (INFO[block : block + read_b]), 2
-	                                            )
-	                                            # print(times_after)
-	
-	                                            block += read_b
-	                                        
-	                                        
-	                                        
+                                                                                                                                                                       
+                                                                                                                                                                               
+                                            Bi3 = int(
+                                                (INFO[block : block + read_b]), 2
+                                            )
+                                            # print(times_after)
+
+                                            block += read_b
                                             times_after = int(
                                                 (INFO[block : block + 6]), 2
                                             )
