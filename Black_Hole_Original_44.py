@@ -258,7 +258,7 @@ class compression:
                                             )  # Convert binary to decimal
                                             num = num - 1
                                             if num == -1:
-                                                num = (2**32) - 1
+                                                num = (2**24) - 1
                                             num_c = num
                                             # num check
                                             # print(f"Converted binary {T8} to decimal: {num}")
@@ -587,6 +587,7 @@ class compression:
                                         stop_compress = 1
                                         Compress_file = 1
                                     long_bits_after_b_1 = 1
+                                    times_compress += 1
                                     
 
                                 # print(Compress_file)
