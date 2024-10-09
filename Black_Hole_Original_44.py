@@ -493,6 +493,8 @@ class compression:
                                                                     Bi3,
                                                                     "01b",
                                                                 )
+                                                                if binary_representation=="0":
+                                                                   binary_representation="" 
                                                                 times_after = (
                                                                     times_after
                                                                     - 1
@@ -811,10 +813,7 @@ class compression:
                                             )
                                             Bif1 += 1
                                             block += 3
-                                            if Bif1==0:
-                                            	read_b==1
-                                            else:
-                                                read_b=Bif1                                                                                                                             
+                                                                                                                                                                       
                                                                                                                                                                                
                                             Bi3 = int(
                                                 (INFO[block : block + read_b]), 2
