@@ -460,7 +460,7 @@ class compression:
                                                                 == times
                                                                 and Bif1 == Bif2
                                                                 and Bi == Bi3
-                                                                or num<2**24
+                                                                or num>2**24
                                                             ):
                                                                 finish1 = 1
                                                                 
@@ -478,7 +478,7 @@ class compression:
                                                                     count_number
                                                                     - 1
                                                                 )
-                                                                if count_number<2**24:
+                                                                if count_number>2**24:
                                                                 	IFC="1"+T8
                                                                 # print(length_tree)
                                                                 # print(count_number)
