@@ -492,55 +492,55 @@ class compression:
                                                                 # print(binary_to_number_number_after),#binary represation
                                                                 # print(length_tree_after)# after
                                                                 #
-
-                                                                binary_representation = format(
-                                                                    Bi3,
-                                                                    "01b",
-                                                                )
-                                                                times_after = (
-                                                                    times_after
-                                                                    - 1
-                                                                )
-                                                                # print(binary_to_number)
-                                                                binary_representation_before_long1 = format(
-                                                                    times_after,
-                                                                    "06b",
-                                                                )
-                                                                # print(binary_representation_before)
-                                                                length_tree_after = format(
-                                                                    binary_representation_before_long,
-                                                                    "05b",
-                                                                )
-
-                                                                length_tree_after1 = (
-                                                                    Bif2
-                                                                )
-                                                                length_tree_after1 = (
-                                                                    length_tree_after1
-                                                                    - 1
-                                                                )
-                                                                length_tree_after2 = format(
-                                                                    length_tree_after1,
-                                                                    "03b",
-                                                                )
-
-                                                                # print(binary_representation_before)
-
-                                                                IFC = (
-                                                                    "0"
-                                                                    + length_tree_after2
-                                                                    + binary_representation
-                                                                    + binary_representation_before_long1
-                                                                    + length_tree_after
-
-                                                                )
-
-                                                                # print(length_tree_after2)
-                                                                # print(length_tree_after)
-                                                                # print(binary_representation_before_long1)
-                                                                # print(binary_representation)
-                                                                # print(len(IFC))
-                                                                # print(count_number)
+                                                                else:
+	                                                                binary_representation = format(
+	                                                                    Bi3,
+	                                                                    "01b",
+	                                                                )
+	                                                                times_after = (
+	                                                                    times_after
+	                                                                    - 1
+	                                                                )
+	                                                                # print(binary_to_number)
+	                                                                binary_representation_before_long1 = format(
+	                                                                    times_after,
+	                                                                    "06b",
+	                                                                )
+	                                                                # print(binary_representation_before)
+	                                                                length_tree_after = format(
+	                                                                    binary_representation_before_long,
+	                                                                    "05b",
+	                                                                )
+	
+	                                                                length_tree_after1 = (
+	                                                                    Bif2
+	                                                                )
+	                                                                length_tree_after1 = (
+	                                                                    length_tree_after1
+	                                                                    - 1
+	                                                                )
+	                                                                length_tree_after2 = format(
+	                                                                    length_tree_after1,
+	                                                                    "03b",
+	                                                                )
+	
+	                                                                # print(binary_representation_before)
+	
+	                                                                IFC = (
+	                                                                    "0"
+	                                                                    + length_tree_after2
+	                                                                    + binary_representation
+	                                                                    + binary_representation_before_long1
+	                                                                    + length_tree_after
+	
+	                                                                )
+	
+	                                                                # print(length_tree_after2)
+	                                                                # print(length_tree_after)
+	                                                                # print(binary_representation_before_long1)
+	                                                                # print(binary_representation)
+	                                                                # print(len(IFC))
+	                                                                # print(count_number)
                                                                 if (
                                                                     len(IFC)
                                                                     <= 23
